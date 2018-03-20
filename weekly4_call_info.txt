@@ -1,0 +1,200 @@
+First Name Jean  
+Last Name Hayward  
+Cell Phone 9546321555  
+Number of Relay Stations 0   
+Minutes Used 0
+Net Cost 0.00
+Tax Rate 0.01
+Call Tax 0.00
+Total Cost of Call 0.00
+
+First Name Marlon  
+Last Name Brando  
+Cell Phone 5612971340  
+Number of Relay Stations 5   
+Minutes Used 50
+Net Cost 2.00
+Tax Rate 0.03
+Call Tax 0.00
+Total Cost of Call 2.00
+
+First Name John  
+Last Name Kennedy  
+Cell Phone 3051234567  
+Number of Relay Stations 8   
+Minutes Used 25
+Net Cost 1.60
+Tax Rate 0.05
+Call Tax 0.00
+Total Cost of Call 1.60
+
+First Name Hillary  
+Last Name Clinton  
+Cell Phone 7542346622  
+Number of Relay Stations 24   
+Minutes Used 17
+Net Cost 3.26
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 3.26
+
+First Name George  
+Last Name Bush  
+Cell Phone 3054432762  
+Number of Relay Stations 15   
+Minutes Used 30
+Net Cost 3.60
+Tax Rate 0.08
+Call Tax 0.00
+Total Cost of Call 3.60
+
+First Name Barack  
+Last Name Obama  
+Cell Phone 9544321011  
+Number of Relay Stations 50   
+Minutes Used 100
+Net Cost 40.00
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 40.00
+
+First Name Donald  
+Last Name Trump  
+Cell Phone 8776219988  
+Number of Relay Stations 87   
+Minutes Used 82
+Net Cost 57.07
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 57.07
+
+First Name Bernie  
+Last Name Sanders  
+Cell Phone 9042224556  
+Number of Relay Stations 4   
+Minutes Used 5
+Net Cost 0.16
+Tax Rate 0.03
+Call Tax 0.00
+Total Cost of Call 0.16
+
+First Name Harry  
+Last Name Ford  
+Cell Phone 7877176590  
+Number of Relay Stations 11   
+Minutes Used 1
+Net Cost 0.09
+Tax Rate 0.05
+Call Tax 0.00
+Total Cost of Call 0.09
+
+First Name Michelle  
+Last Name Obama  
+Cell Phone 5617278899  
+Number of Relay Stations 20   
+Minutes Used 45
+Net Cost 7.20
+Tax Rate 0.08
+Call Tax 0.00
+Total Cost of Call 7.20
+
+First Name Ann  
+Last Name Dunham  
+Cell Phone 9546321555  
+Number of Relay Stations 4   
+Minutes Used 3
+Net Cost 0.10
+Tax Rate 0.03
+Call Tax 0.00
+Total Cost of Call 0.10
+
+First Name Vladimir  
+Last Name Putin  
+Cell Phone 5612971340  
+Number of Relay Stations 79   
+Minutes Used 86
+Net Cost 54.35
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 54.35
+
+First Name Harriet  
+Last Name Tubman  
+Cell Phone 3051234567  
+Number of Relay Stations 8   
+Minutes Used 25
+Net Cost 1.60
+Tax Rate 0.05
+Call Tax 0.00
+Total Cost of Call 1.60
+
+First Name Oprah  
+Last Name Winfrey  
+Cell Phone 5611234444  
+Number of Relay Stations 24   
+Minutes Used 118
+Net Cost 22.66
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 22.66
+
+First Name Charlotte  
+Last Name Ray  
+Cell Phone 3054432762  
+Number of Relay Stations 115   
+Minutes Used 25
+Net Cost 23.00
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 23.00
+
+First Name Tina  
+Last Name Turner  
+Cell Phone 8776219988  
+Number of Relay Stations 265   
+Minutes Used 22
+Net Cost 46.64
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 46.64
+
+First Name Shirley  
+Last Name Chisholm  
+Cell Phone 9042224556  
+Number of Relay Stations 2   
+Minutes Used 5
+Net Cost 0.08
+Tax Rate 0.03
+Call Tax 0.00
+Total Cost of Call 0.08
+
+First Name Maritza  
+Last Name Correla  
+Cell Phone 7877176590  
+Number of Relay Stations 89   
+Minutes Used 67
+Net Cost 47.70
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 47.70
+
+First Name Margaret  
+Last Name Thatcher  
+Cell Phone 5617278899  
+Number of Relay Stations 40   
+Minutes Used 56
+Net Cost 17.92
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 17.92
+
+First Name Juan  
+Last Name Perez  
+Cell Phone   
+Number of Relay Stations 50   
+Minutes Used 50
+Net Cost 20.00
+Tax Rate 0.12
+Call Tax 0.00
+Total Cost of Call 20.00
+

@@ -77,7 +77,7 @@ void Initialize(call_record * & call_DB, int & count, int & size) {
 	//you do not know how many records you will be reading.
 	while (!in.eof()) {
 		if (Is_full(count, size)) {
-			Double_Size(call_DB, count, size);
+			Double_size(call_DB, count, size);
 		}
 		in >> call_DB[count].firstname;
 		in >> call_DB[count].lastname;
@@ -136,6 +136,7 @@ int Search(const call_record *call_DB, const int count, const string key) {
 			return -1;
 		}
 	}
+	return 0;
 }
 
 /*********************************************************************************************************************************/
@@ -172,7 +173,7 @@ void Remove(call_record *call_DB, int & count, const string key) {
 	if (Is_empty(count) == 0) {
 		return;
 	}
-	int location = Search(call_DB, count, size);
+	int location = Search(call_DB, count, key);
 	if (location == -1) {
 		std::cout << "Location" << location << '\n';
 		return;
@@ -259,15 +260,15 @@ void Print(const call_record *call_DB, int & count) {
   // use a "for" loop here to
 	// print the output to file
 	for (int i = 0; i < count; i++) {
-		out<< std::left << setw(30)<< "First Name " <<call_DB[i].firstname<<"  "<<endl;
-		out<< std::left << setw(30)<< "Last Name " <<call_DB[i].lastname<<"  "<<endl;
-		out<< std::left << setw(30)<< "Cell Phone " <<call_DB[i].cell_number<<"  "<<endl;
-		out<< std::left << setw(30)<< "Number of Relay Stations " <<call_DB[i].relays<<"   "<<endl;
-		out<< std::left << setw(30)<< "Minutes Used " <<call_DB[i].call_length<<endl;
-	  out<< std::left << setw(30)<< "Net Cost " <<call_DB[i].net_cost<<endl;
-	  out<< std::left << setw(30)<< "Tax Rate " <<call_DB[i].tax_rate<<endl;
-	  out<< std::left << setw(30)<< "Call Tax " <<call_DB[i].call_tax<<endl;
-	  out<< std::left << setw(30)<< "Total Cost of Call " <<call_DB[i].total_cost<<endl<<endl;
+		out << "First Name " <<call_DB[i].firstname<<"  "<<endl;
+		out << "Last Name " <<call_DB[i].lastname<<"  "<<endl;
+		out << "Cell Phone " <<call_DB[i].cell_number<<"  "<<endl;
+		out << "Number of Relay Stations " <<call_DB[i].relays<<"   "<<endl;
+		out << "Minutes Used " <<call_DB[i].call_length<<endl;
+	  out << "Net Cost " <<call_DB[i].net_cost<<endl;
+	  out << "Tax Rate " <<call_DB[i].tax_rate<<endl;
+	  out << "Call Tax " <<call_DB[i].call_tax<<endl;
+	  out << "Total Cost of Call " <<call_DB[i].total_cost<<endl<<endl;
 	}
 	out.close();
 }
@@ -290,6 +291,7 @@ int main()
 	int size = 5; //total amount of memory (cells) allocated for the dynamic array of call records
 	int count = 0;
 	call_record *call_DB = new call_record[size];
+	string key;
 
 	//put code here to test your funcitons
 	Initialize(call_DB, count, size);
