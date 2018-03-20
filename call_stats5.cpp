@@ -1,6 +1,26 @@
-/* 
+/*
 
+Name: Juan Perez   Z#:23026404
+Course: COP 3014
+Professor: Dr. Lofton Bullard
+Due Date: 3/20/18     Due Time: 11:59
+Total Points: 20
+Assignment 8: call_stats5.cpp
 
+Description
+1. Read the contents of a data file one record at a time in a dynamic array;
+2. Process the data that was read from the data file one record at a time, into
+a dynamic array;
+3. Print the records in a dynamic array to a datafile using an ofstream
+object;
+4. Use the operator new to allocate memory for a dynamic array;
+5. Use the operator delete to de-allocate the memory allocated by the new;
+(basically, making previously used memory available for use again) 6. Copy the content of one dynamic array into another dynamic array
+(basically, copying memory from one location to another)
+4. Be able to use the fstream library;
+5. Be able to use a dynamic array of record records;
+6. Be able to use an ifstream object;
+7. Be able to use an ofstream object;
 */
 
 #include <iostream>
@@ -37,9 +57,9 @@ void Destroy_call_DB(call_record * &call_DB); //de-allocates all memory allocate
 
 /************************************************************************************************************************************/
 //Name: Initialize
-//Precondition: 
-//Postcondition: 
-//Decription: Reads the data file of call information (cell number, relays and call length) into the dynamic array of call record, 
+//Precondition:
+//Postcondition:
+//Decription: Reads the data file of call information (cell number, relays and call length) into the dynamic array of call record,
 //call_DB. If the count because equal to the size the function double_size is called and the memory allocated to call_DB is doubled.
 /************************************************************************************************************************************/
 void Initialize(call_record * & call_DB, int & count, int & size)
@@ -48,24 +68,24 @@ void Initialize(call_record * & call_DB, int & count, int & size)
 
 /***********************************************************************************************************************************/
 //Name: Is_empty
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: returns true if call_DB is empty
 /**********************************************************************************************************************************/
 
-//ONE WAY TO MAKE A FUNCTION INLINE IS TO PUT THE KEYWORD "inline" in from of the 
+//ONE WAY TO MAKE A FUNCTION INLINE IS TO PUT THE KEYWORD "inline" in from of the
 //FUNCTION HEADER AS SHOWN BELOW:
 inline bool Is_empty(const int count)
 {
 	return -1;
 }
 
-//ONE WAY TO MAKE A FUNCTION INLINE IS TO PUT THE KEYWORD "inline" in from of the 
+//ONE WAY TO MAKE A FUNCTION INLINE IS TO PUT THE KEYWORD "inline" in from of the
 //FUNCTION HEADER AS SHOWN BELOW:
 /**********************************************************************************************************************************/
-//Name: Is_full 
-//Precondition: 
-//Postcondition: 
+//Name: Is_full
+//Precondition:
+//Postcondition:
 //Decription: returns true if call_DB is full
 /*********************************************************************************************************************************/
 inline bool Is_full(const int count, int size)
@@ -75,8 +95,8 @@ inline bool Is_full(const int count, int size)
 
 /**********************************************************************************************************************************/
 //Name: search
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: locates key in call_DB if it is there; otherwise -1 is returned
 /*********************************************************************************************************************************/
 int Search(const call_record *call_DB, const int count, const string key)
@@ -86,8 +106,8 @@ int Search(const call_record *call_DB, const int count, const string key)
 
 /*********************************************************************************************************************************/
 //Name: Add
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: add key to call_DB; if call_DB is full, double_size is called to increase the size of call_DB.
 /********************************************************************************************************************************/
 void Add(call_record * &call_DB, int & count, int & size, const string key)
@@ -96,8 +116,8 @@ void Add(call_record * &call_DB, int & count, int & size, const string key)
 
 /********************************************************************************************************************************/
 //Name: Remove
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: remove key from call_DB if it is there.
 /*******************************************************************************************************************************/
 void Remove(call_record *call_DB, int & count, const string key)
@@ -106,8 +126,8 @@ void Remove(call_record *call_DB, int & count, const string key)
 
 /******************************************************************************************************************************/
 //Name: Double_Size
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: doubles the size (capacity) of call_DB
 /******************************************************************************************************************************/
 void Double_size(call_record * &call_DB, int & count, int & size)
@@ -117,8 +137,8 @@ void Double_size(call_record * &call_DB, int & count, int & size)
 
 /******************************************************************************************************************************/
 //Name: Process
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: calculate the net cost, tax rate, call tax and total cost for every call record in call_DB.
 /*****************************************************************************************************************************/
 void Process(call_record *call_DB, const int & count)
@@ -128,8 +148,8 @@ void Process(call_record *call_DB, const int & count)
 
 /****************************************************************************************************************************/
 //Name: Print
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: prints every field of every call_record in call_DB formatted to the screen.
 /***************************************************************************************************************************/
 void Print(const call_record *call_DB, int & count)
@@ -138,8 +158,8 @@ void Print(const call_record *call_DB, int & count)
 
 /****************************************************************************************************************************/
 //Name: Destroy_call_DB
-//Precondition: 
-//Postcondition: 
+//Precondition:
+//Postcondition:
 //Decription: de-allocates all memory allocated to call_DB.  This should be the last function to be called before the program
 //            is exited.
 /***************************************************************************************************************************/
@@ -162,5 +182,3 @@ int main()
 	Destroy_call_DB(call_DB);
 	return 0;
 }
-
-
