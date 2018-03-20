@@ -27,8 +27,7 @@ object;
 #include <fstream>
 #include <iostream>
 using namespace std;
-
-
+//sample record (class with no functionality)
 class call_record
 {
 public:
@@ -42,8 +41,7 @@ public:
 	double call_tax;
 	double total_cost;
 };
-
-
+//Function Prototypes
 void Initialize(call_record *& call_DB, int & count, int & size);
 bool Is_empty(const int count); //inline implementation
 bool Is_full(const int count, int size);//inline implementation
@@ -54,14 +52,11 @@ void Double_size(call_record * &call_DB, int & count, int & size);
 void Process(call_record *call_DB, const int & count);
 void Print(const call_record *call_DB, int & count); //prints all the elements in the list to the screen
 void Destroy_call_DB(call_record * &call_DB); //de-allocates all memory allocate to call_DB by operator new.
-
-
-
 /************************************************************************************************************************************/
 //Name: Initialize
-//Precondition:
-//Postcondition:
-//Decription: Reads the data file of call information (cell number, relays and call length) into the dynamic array of call record,
+//Precondition: The varialbes firstname, lastname, cell_num, relays, and call_length have not been initialized
+//Postcondition: The variables have been initialized by data file.
+//Decription: Reads the data file of call information (firstname, lastname, cell number, relays and call length) into the dynamic array of call record,
 //call_DB. If the count because equal to the size the function double_size is called and the memory allocated to call_DB is doubled.
 /************************************************************************************************************************************/
 void Initialize(call_record * & call_DB, int & count, int & size) {
@@ -88,14 +83,12 @@ void Initialize(call_record * & call_DB, int & count, int & size) {
 	}
 	in.close();//file stream "in" closes.
 }
-
 /***********************************************************************************************************************************/
 //Name: Is_empty
-//Precondition:
-//Postcondition:
+//Precondition: Checks to see if call_DB is empty
+//Postcondition: call_DB status verifeid.
 //Decription: returns true if call_DB is empty
 /**********************************************************************************************************************************/
-
 //ONE WAY TO MAKE A FUNCTION INLINE IS TO PUT THE KEYWORD "inline" in from of the
 //FUNCTION HEADER AS SHOWN BELOW:
 inline bool Is_empty(const int count) {
@@ -105,13 +98,12 @@ inline bool Is_empty(const int count) {
 		return -1;
 	}
 }
-
 //ONE WAY TO MAKE A FUNCTION INLINE IS TO PUT THE KEYWORD "inline" in from of the
 //FUNCTION HEADER AS SHOWN BELOW:
 /**********************************************************************************************************************************/
 //Name: Is_full
-//Precondition:
-//Postcondition:
+//Precondition: Checks to see if call_DB is full
+//Postcondition: call_DB status verifeid.
 //Decription: returns true if call_DB is full
 /*********************************************************************************************************************************/
 inline bool Is_full(const int count, int size) {
@@ -121,11 +113,10 @@ inline bool Is_full(const int count, int size) {
 		return -1;
 	}
 }
-
 /**********************************************************************************************************************************/
 //Name: search
-//Precondition:
-//Postcondition:
+//Precondition: Checks to see if there is a call_DB
+//Postcondition: call_DB status verifeid.
 //Decription: locates key in call_DB if it is there; otherwise -1 is returned
 /*********************************************************************************************************************************/
 int Search(const call_record *call_DB, const int count, const string key) {
@@ -141,32 +132,31 @@ int Search(const call_record *call_DB, const int count, const string key) {
 
 /*********************************************************************************************************************************/
 //Name: Add
-//Precondition:
-//Postcondition:
+//Precondition: Checks memory of call_DB
+//Postcondition: Increase call_DB size if full.
 //Decription: add key to call_DB; if call_DB is full, double_size is called to increase the size of call_DB.
 /********************************************************************************************************************************/
 void Add(call_record * &call_DB, int & count, int & size, const string key) {
-int index = count;
-if (Is_full(count, size)) {
-	Double_size(call_DB, count, size);
-	call_DB[index].cell_number = key;
-	std::cout << "Enter First Name" << '\n';
-	std::cin >> call_DB[index].firstname;
-	std::cout << "Enter Last Name" << '\n';
-	std::cin >> call_DB[index].lastname;
-	std::cout << "Enter number of Relays" << '\n';
-	std::cin >> call_DB[index].relays;
-	std::cout << "Enter Call Length" << '\n';
-	std::cin >> call_DB[index].call_length;
-	count++;
+	int index = count;
+	if (Is_full(count, size)) {
+		Double_size(call_DB, count, size);
+		call_DB[index].cell_number = key;
+		std::cout << "Enter First Name" << '\n';
+		std::cin >> call_DB[index].firstname;
+		std::cout << "Enter Last Name" << '\n';
+		std::cin >> call_DB[index].lastname;
+		std::cout << "Enter number of Relays" << '\n';
+		std::cin >> call_DB[index].relays;
+		std::cout << "Enter Call Length" << '\n';
+		std::cin >> call_DB[index].call_length;
+		count++;
+	}
+	return;
 }
-
-}
-
 /********************************************************************************************************************************/
 //Name: Remove
-//Precondition:
-//Postcondition:
+//Precondition: Checks location of call_DB
+//Postcondition: call_DB is removed if exists.
 //Decription: remove key from call_DB if it is there.
 /*******************************************************************************************************************************/
 void Remove(call_record *call_DB, int & count, const string key) {
@@ -184,11 +174,10 @@ void Remove(call_record *call_DB, int & count, const string key) {
 		count = count - 1;
 	}
 }
-
 /******************************************************************************************************************************/
 //Name: Double_Size
-//Precondition:
-//Postcondition:
+//Precondition: Checks capacity of call_DB
+//Postcondition: capacity doubled.
 //Decription: doubles the size (capacity) of call_DB
 /******************************************************************************************************************************/
 void Double_size(call_record * &call_DB, int & count, int & size) {
@@ -200,13 +189,12 @@ void Double_size(call_record * &call_DB, int & count, int & size) {
 	std::cout << "Size: " << size << '\n';
 	delete[] call_DB;
 	call_DB = temp;
+	return;
 }
-
-
 /******************************************************************************************************************************/
 //Name: Process
-//Precondition:
-//Postcondition:
+//Precondition: The variables have been initialized by the data file.
+//Postcondition: Conditional statements initialize relay variables.
 //Decription: calculate the net cost, tax rate, call tax and total cost for every call record in call_DB.
 /*****************************************************************************************************************************/
 void Process(call_record *call_DB, const int & count) {
@@ -215,8 +203,7 @@ void Process(call_record *call_DB, const int & count) {
 	//accessing fields in a record.  For example, when we need
 	//to access the relay field in the first record in the array use
 	//call_DB[0].relay
-	for (int i = 0; i < count; i++)
-	{
+	for (int i = 0; i < count; i++) {
 		call_DB[i].net_cost = call_DB[i].relays / 50.0 * .40 * call_DB[i].call_length;
 		call_DB[i].call_tax = call_DB[i].net_cost * call_DB[i].tax_rate;
 		call_DB[i].total_cost = call_DB[i].net_cost + call_DB[i].call_tax;
@@ -233,20 +220,19 @@ void Process(call_record *call_DB, const int & count) {
 			call_DB[i].tax_rate = 0.12;
 		}
 	}
+	return;
 }
-
-
 /****************************************************************************************************************************/
 //Name: Print
-//Precondition:
-//Postcondition:
+//Precondition: The variables have been initialized and calculated
+//Postcondition: Results are displayed.
 //Decription: prints every field of every call_record in call_DB formatted to the screen.
 /***************************************************************************************************************************/
 void Print(const call_record *call_DB, int & count) {
 	ofstream out; //declare the output file stream "out".
-
-	out.open("weekly4_call_info.txt");//bind the file "weekly4_call_info.txt" to
-	                       //to the output file stream "out".
+	//bind the file "weekly4_call_info.txt" to
+	//to the output file stream "out".
+	out.open("weekly5_call_info.txt");
 	//Magic Formula
 	out.setf(ios::showpoint);
  	out.precision(2);
@@ -271,28 +257,26 @@ void Print(const call_record *call_DB, int & count) {
 	  out << "Total Cost of Call " <<call_DB[i].total_cost<<endl<<endl;
 	}
 	out.close();
+	return;
 }
 
 /****************************************************************************************************************************/
 //Name: Destroy_call_DB
-//Precondition:
-//Postcondition:
+//Precondition: Checks to see if call_DB exists
+//Postcondition: Deletes call_DB.
 //Decription: de-allocates all memory allocated to call_DB.  This should be the last function to be called before the program
 //            is exited.
 /***************************************************************************************************************************/
 void Destroy_call_DB(call_record * &call_DB) {
 	delete[] call_DB;
+	return;
 }
-
-
-
-int main()
-{
+//Main Function
+int main() {
 	int size = 5; //total amount of memory (cells) allocated for the dynamic array of call records
 	int count = 0;
 	call_record *call_DB = new call_record[size];
 	string key;
-
 	//put code here to test your funcitons
 	Initialize(call_DB, count, size);
 	Is_empty(count); //inline implementation

@@ -188,13 +188,13 @@ Tax Rate 0.12
 Call Tax 0.00
 Total Cost of Call 17.92
 
-First Name Juan  
-Last Name Perez  
+First Name   
+Last Name   
 Cell Phone   
-Number of Relay Stations 50   
-Minutes Used 50
-Net Cost 20.00
-Tax Rate 0.12
+Number of Relay Stations 0   
+Minutes Used 0
+Net Cost 0.00
+Tax Rate 0.01
 Call Tax 0.00
-Total Cost of Call 20.00
+Total Cost of Call 0.00
 
