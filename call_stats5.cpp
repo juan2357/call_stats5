@@ -22,7 +22,9 @@ object;
 6. Be able to use an ifstream object;
 7. Be able to use an ofstream object;
 */
-
+#include <iostream>
+#include <string>
+#include <fstream>
 #include <iostream>
 using namespace std;
 
